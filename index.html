@@ -13,7 +13,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Pacifico&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Oswald:wght@500;600;700&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Pacifico&display=swap" rel="stylesheet" />
 
 <style>
   :root{
@@ -43,7 +43,7 @@
     background:var(--cream);
     line-height:1.6;
   }
-  h1,h2,h3,.display{font-family:'Baloo 2',cursive;line-height:1.1;margin:0;color:var(--charcoal);}
+  h1,h2,h3,.display{font-family:'Alfa Slab One',ui-serif,Georgia,serif;line-height:1.1;margin:0;color:var(--charcoal);letter-spacing:.01em;}
   .script{font-family:'Pacifico',cursive;font-weight:400;}
   a{color:inherit;}
   img{max-width:100%;display:block;}
@@ -51,7 +51,7 @@
   /* ---------- Buttons ---------- */
   .btn{
     display:inline-flex;align-items:center;gap:.55rem;
-    font-family:'Baloo 2',cursive;font-weight:700;font-size:1.05rem;
+    font-family:'Oswald',sans-serif;font-weight:700;font-size:1.05rem;
     padding:.85rem 1.6rem;border-radius:999px;border:none;cursor:pointer;
     text-decoration:none;transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
     box-shadow:0 6px 0 rgba(0,0,0,.12);
@@ -80,7 +80,7 @@
     object-fit:cover;flex:none;box-shadow:var(--shadow);
     background:#1f1f1d;
   }
-  .brand .name{font-family:'Baloo 2',cursive;font-weight:800;font-size:1.25rem;color:var(--charcoal);white-space:nowrap;}
+  .brand .name{font-family:'Oswald',sans-serif;font-weight:800;font-size:1.25rem;color:var(--charcoal);white-space:nowrap;}
   .brand .name small{display:block;font-family:'Pacifico',cursive;font-size:.72rem;color:var(--tomato);font-weight:400;margin-top:-4px;}
   nav.links{display:flex;align-items:center;gap:.3rem;flex-wrap:wrap;}
   nav.links a{
@@ -125,7 +125,7 @@
     display:grid;place-items:center;text-align:center;padding:1.5rem;
     border:4px dashed rgba(215,38,61,.3);
   }
-  .hero-badge .disc .big{font-family:'Baloo 2',cursive;font-weight:800;font-size:3.4rem;line-height:1;color:var(--tomato);}
+  .hero-badge .disc .big{font-family:'Oswald',sans-serif;font-weight:800;font-size:3.4rem;line-height:1;color:var(--tomato);}
   .hero-badge .disc .sm{font-family:'Pacifico',cursive;color:var(--charcoal);font-size:1.1rem;}
   .hero-badge .disc .emoji{font-size:2.4rem;margin-bottom:.3rem;}
   .hero-logo{display:grid;place-items:center;}
@@ -135,7 +135,7 @@
   }
 
   /* ---------- Banner sign strip ---------- */
-  .banner-strip{background:linear-gradient(180deg,var(--teal),var(--teal-deep));padding:2.2rem 1.2rem;color:var(--cream);font-family:'Baloo 2',cursive;text-align:center;}
+  .banner-strip{background:linear-gradient(180deg,var(--teal),var(--teal-deep));padding:2.2rem 1.2rem;color:var(--cream);font-family:'Oswald',sans-serif;text-align:center;}
   .banner-strip .wrap{display:flex;justify-content:center;}
   .banner-strip img{
     width:100%;max-width:920px;height:auto;border-radius:14px;
@@ -185,11 +185,11 @@
     display:flex;flex-direction:column;gap:.2rem;
   }
   .item .row{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;}
-  .item .name{font-family:'Baloo 2',cursive;font-weight:700;font-size:1.08rem;color:var(--charcoal);}
-  .item .price{font-family:'Baloo 2',cursive;font-weight:700;color:var(--tomato);white-space:nowrap;}
+  .item .name{font-family:'Oswald',sans-serif;font-weight:700;font-size:1.08rem;color:var(--charcoal);}
+  .item .price{font-family:'Oswald',sans-serif;font-weight:700;color:var(--tomato);white-space:nowrap;}
   .item .desc{font-size:.9rem;color:#6b5d4f;}
   .price-grid{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;}
-  .price-grid span{font-family:'Baloo 2',cursive;font-weight:600;color:var(--ink);}
+  .price-grid span{font-family:'Oswald',sans-serif;font-weight:600;color:var(--ink);}
   .price-grid span b{color:var(--tomato);}
   .menu-cta{text-align:center;margin-top:1rem;}
 
@@ -203,18 +203,25 @@
   .fb-fallback{text-align:center;padding:2rem 1rem;color:#6b5d4f;}
 
   /* ---------- Reviews ---------- */
-  .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;margin-bottom:2rem;}
+  .reviews-two{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-bottom:2rem;}
+  .review-col-title{
+    text-align:center;font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;
+    letter-spacing:.04em;font-size:1.15rem;color:var(--teal);margin:0 0 .8rem;
+    display:flex;align-items:center;justify-content:center;gap:.5rem;
+  }
   .review-widget-slot{
-    background:#fff;border:2px dashed rgba(215,38,61,.35);border-radius:var(--radius);
-    padding:2.5rem 1.5rem;text-align:center;color:#8a7c6d;grid-column:1/-1;
+    background:#fff;border:2px dashed rgba(192,50,46,.35);border-radius:var(--radius);
+    padding:2.5rem 1.5rem;text-align:center;color:#8a7c6d;min-height:200px;
+    display:flex;flex-direction:column;justify-content:center;gap:.4rem;
   }
   .review-widget-slot strong{color:var(--tomato);}
   .review-cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;}
+  @media(max-width:680px){ .reviews-two{grid-template-columns:1fr;} }
 
   /* ---------- Footer ---------- */
   footer{background:var(--charcoal);color:#f6ede2;padding:3rem 1.2rem 2rem;}
   .foot-grid{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;}
-  footer h4{font-family:'Baloo 2',cursive;color:#fff;font-size:1.3rem;margin:0 0 .6rem;}
+  footer h4{font-family:'Oswald',sans-serif;color:#fff;font-size:1.3rem;margin:0 0 .6rem;}
   footer a{color:#f6ede2;text-decoration:none;}
   footer a:hover{color:var(--pink);}
   footer .hours-list{list-style:none;padding:0;margin:0;font-size:.95rem;}
@@ -515,20 +522,37 @@
       <p>We love our Spartanburg neighbors. Read our reviews — and if we treated you right, leave us one too!</p>
     </div>
 
-    <div class="reviews-grid">
-      <!-- REVIEW WIDGET GOES HERE.
-           Paste your live Google/Facebook reviews widget embed code (e.g. from Elfsight
-           or EmbedSocial) in place of this slot to show auto-updating reviews. -->
-      <div class="review-widget-slot">
-        <p>⭐️⭐️⭐️⭐️⭐️</p>
-        <p><strong>Live reviews widget goes here.</strong><br>
-        Once you pick a reviews source (Google or Facebook), your live, auto-updating reviews will display in this spot.</p>
+    <div class="reviews-two">
+
+      <!-- ================= GOOGLE REVIEWS =================
+           Paste your Elfsight "Google Reviews" widget embed code in place of
+           the .review-widget-slot below (keep it inside this .review-col). -->
+      <div class="review-col">
+        <h3 class="review-col-title">⭐ Google Reviews</h3>
+        <div class="review-widget-slot" id="google-reviews">
+          <p style="font-size:1.3rem;">⭐️⭐️⭐️⭐️⭐️</p>
+          <p><strong>Google reviews will show here.</strong><br>
+          Paste your Elfsight “Google Reviews” embed code into this box.</p>
+        </div>
       </div>
+
+      <!-- ================= FACEBOOK REVIEWS =================
+           Paste your Elfsight "Facebook Reviews" widget embed code in place of
+           the .review-widget-slot below (keep it inside this .review-col). -->
+      <div class="review-col">
+        <h3 class="review-col-title">👍 Facebook Reviews</h3>
+        <div class="review-widget-slot" id="facebook-reviews">
+          <p style="font-size:1.3rem;">⭐️⭐️⭐️⭐️⭐️</p>
+          <p><strong>Facebook reviews will show here.</strong><br>
+          Paste your Elfsight “Facebook Reviews” embed code into this box.</p>
+        </div>
+      </div>
+
     </div>
 
     <div class="review-cta">
       <a class="btn btn-primary" href="https://search.google.com/local/writereview?placeid=YOUR_GOOGLE_PLACE_ID" target="_blank" rel="noopener">⭐ Leave a Google Review</a>
-      <a class="btn btn-pink" href="https://www.facebook.com/profile.php?id=61590612227667/reviews" target="_blank" rel="noopener">👍 Review us on Facebook</a>
+      <a class="btn btn-pink" href="https://www.facebook.com/profile.php?id=61590612227667&sk=reviews" target="_blank" rel="noopener">👍 Review us on Facebook</a>
     </div>
   </div>
 </section>
