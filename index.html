@@ -201,6 +201,11 @@
     padding:1rem;max-width:520px;width:100%;overflow:hidden;
   }
   .fb-fallback{text-align:center;padding:2rem 1rem;color:#6b5d4f;}
+  .fb-follow-title{
+    text-align:center;color:var(--teal);font-size:1.5rem;margin:3rem 0 .3rem;
+    padding-top:2rem;border-top:3px dotted rgba(192,50,46,.25);
+  }
+  .fb-follow-sub{text-align:center;color:#6b5d4f;max-width:48ch;margin:0 auto 1.6rem;}
 
   /* ---------- Reviews ---------- */
   .reviews-two{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-bottom:2rem;}
@@ -273,7 +278,6 @@
     <button class="menu-toggle" aria-label="Menu" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
     <nav class="links" id="navlinks">
       <a href="#menu">Menu</a>
-      <a href="#photos">Photos</a>
       <a href="#reviews">Reviews</a>
       <a href="#visit">Visit Us</a>
       <a class="order" href="https://order.toasttab.com/online/maxis-pizza-ice-cream-9160-warren-h-abernathy" target="_blank" rel="noopener">Order Online 🛒</a>
@@ -478,14 +482,26 @@
   </div>
 </div>
 
-<!-- ============ PHOTOS / FACEBOOK LIVE FEED ============ -->
-<section id="photos">
+<!-- ============ REVIEWS & FACEBOOK ============ -->
+<section id="reviews">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">fresh off the oven</div>
-      <h2>From Our Facebook</h2>
-      <p>See our latest photos and posts — this feed updates automatically every time we share something new.</p>
+      <div class="eyebrow">the word around town</div>
+      <h2>What Folks Are Saying</h2>
+      <p>We love our Spartanburg neighbors. Read our reviews — and if we treated you right, leave us one too!</p>
     </div>
+
+    <!-- ================= FACEBOOK REVIEWS (SociableKit) ================= -->
+    <div class="sk-ww-fb-page-reviews" data-embed-id="25699065"></div>
+    <script src="https://widgets.sociablekit.com/facebook-page-reviews/widget.js" defer></script>
+
+    <div class="review-cta">
+      <a class="btn btn-pink" href="https://www.facebook.com/profile.php?id=61590612227667&sk=reviews" target="_blank" rel="noopener">👍 Review us on Facebook</a>
+    </div>
+
+    <!-- ===== Facebook follow / photo feed (now part of the reviews section) ===== -->
+    <h3 class="fb-follow-title">📸 Follow Us on Facebook</h3>
+    <p class="fb-follow-sub">Our latest photos &amp; posts — updates automatically every time we share something new.</p>
     <div class="fb-wrap">
       <div class="fb-frame">
         <!-- Facebook Page Plugin: auto-updates with the page's newest posts & photos -->
@@ -510,25 +526,6 @@
     <p style="text-align:center;margin-top:1.5rem;">
       <a class="btn btn-ghost" href="https://www.facebook.com/profile.php?id=61590612227667" target="_blank" rel="noopener">See all photos on Facebook →</a>
     </p>
-  </div>
-</section>
-
-<!-- ============ REVIEWS ============ -->
-<section id="reviews">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow">the word around town</div>
-      <h2>What Folks Are Saying</h2>
-      <p>We love our Spartanburg neighbors. Read our reviews — and if we treated you right, leave us one too!</p>
-    </div>
-
-    <!-- ================= FACEBOOK REVIEWS (SociableKit) ================= -->
-    <div class="sk-ww-fb-page-reviews" data-embed-id="25699065"></div>
-    <script src="https://widgets.sociablekit.com/facebook-page-reviews/widget.js" defer></script>
-
-    <div class="review-cta">
-      <a class="btn btn-pink" href="https://www.facebook.com/profile.php?id=61590612227667&sk=reviews" target="_blank" rel="noopener">👍 Review us on Facebook</a>
-    </div>
   </div>
 </section>
 
