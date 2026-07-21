@@ -335,7 +335,7 @@
     <span class="sep">|</span>
     <a href="https://maps.app.goo.gl/SVcKFnTbaD5mDzP68" target="_blank" rel="noopener">📍 9160 Warren H Abernathy Hwy, Spartanburg, SC</a>
     <span class="sep">|</span>
-    <a href="#visit">🕒 Open Today &middot; see hours</a>
+    <a href="#visit" id="open-status">🕒 See our hours</a>
   </div>
 </div>
 
@@ -562,9 +562,6 @@
            aria-label="Open Maxi's Pizza &amp; Ice Cream on Google Maps"
            style="position:absolute;inset:0;z-index:2;"></a>
       </div>
-      <p style="text-align:center;margin:.9rem 0 0;">
-        <a class="btn btn-ghost" href="https://maps.app.goo.gl/SVcKFnTbaD5mDzP68" target="_blank" rel="noopener">📍 Get Directions</a>
-      </p>
     </div>
   </div>
 </section>
@@ -645,6 +642,31 @@
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Live "Open now / Closed now" status based on Spartanburg (Eastern) time.
+  (function(){
+    var el = document.getElementById('open-status');
+    if(!el) return;
+    // [openHour, closeHour] in 24h, keyed by day (0=Sun … 6=Sat)
+    var hours = {0:[16,21], 1:[11,21], 2:[11,21], 3:[11,21], 4:[11,21], 5:[11,22], 6:[11,22]};
+    function render(){
+      try{
+        var parts = new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+        var dayMap = {Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+        var wd, hh, mm;
+        parts.forEach(function(p){
+          if(p.type==='weekday') wd = dayMap[p.value];
+          if(p.type==='hour')    hh = parseInt(p.value,10) % 24;
+          if(p.type==='minute')  mm = parseInt(p.value,10);
+        });
+        var cur = hh*60 + mm, h = hours[wd];
+        var open = h && cur >= h[0]*60 && cur < h[1]*60;
+        el.innerHTML = open ? '🟢 Open now &middot; see hours' : '🔴 Closed now &middot; see hours';
+      }catch(e){ el.innerHTML = '🕒 See our hours'; }
+    }
+    render();
+    setInterval(render, 60000); // refresh every minute
+  })();
   // Close mobile nav after clicking a link
   document.querySelectorAll('#navlinks a').forEach(function(a){
     a.addEventListener('click', function(){ document.getElementById('navlinks').classList.remove('open'); });
