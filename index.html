@@ -109,8 +109,15 @@
     padding:.35rem .9rem;border-radius:999px;font-size:.85rem;letter-spacing:.03em;
     box-shadow:var(--shadow);margin-bottom:1rem;
   }
-  .hero h1{font-size:clamp(2.5rem,6vw,4.3rem);font-weight:800;}
-  .hero h1 .l2{color:var(--tomato);}
+  .hero h1{text-transform:uppercase;line-height:.9;margin:0;}
+  .hero h1 .l1{
+    display:block;color:var(--tomato);font-size:clamp(3.2rem,10vw,6rem);
+    letter-spacing:.01em;text-shadow:3px 4px 0 rgba(31,31,29,.18);
+  }
+  .hero h1 .l2{
+    display:block;color:var(--charcoal);font-size:clamp(1.35rem,3.6vw,2.3rem);
+    letter-spacing:.03em;margin-top:.18em;
+  }
   .hero .tagline{font-family:'Pacifico',cursive;color:var(--pink-deep);font-size:clamp(1.3rem,3vw,1.9rem);margin:.4rem 0 1rem;}
   .hero p.lead{font-size:1.12rem;max-width:34ch;margin:0 0 1.6rem;}
   .hero-cta{display:flex;gap:.8rem;flex-wrap:wrap;}
@@ -306,8 +313,8 @@
 <section class="hero" style="padding-top:0;padding-bottom:0;">
   <div class="hero-inner">
     <div>
-      <span class="kicker">🍕🍦 Spartanburg, South Carolina</span>
-      <h1>Maxi's Pizza<br><span class="l2">&amp; Ice Cream</span></h1>
+      <span class="kicker">Spartanburg, South Carolina</span>
+      <h1><span class="l1">Maxi's</span><span class="l2">Pizza &amp; Ice Cream</span></h1>
       <p class="tagline">Just Old Fashioned Good!</p>
       <p class="lead">Hand-built specialty pizzas, saucy wings, loaded subs, and scoops of homemade ice cream — made fresh, the old fashioned way.</p>
       <div class="hero-cta">
