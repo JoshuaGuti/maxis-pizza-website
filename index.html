@@ -223,6 +223,21 @@
   .review-cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;}
   @media(max-width:680px){ .reviews-two{grid-template-columns:1fr;} }
 
+  /* ---------- FAQ ---------- */
+  .faq-list{display:flex;flex-direction:column;gap:.8rem;}
+  .faq{background:#fff;border-radius:14px;box-shadow:0 4px 14px rgba(43,33,24,.07);overflow:hidden;border-left:5px solid var(--tomato);}
+  .faq summary{
+    cursor:pointer;list-style:none;padding:1.05rem 1.3rem;
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:1.1rem;color:var(--charcoal);
+    display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  }
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:'+';color:var(--tomato);font-size:1.7rem;line-height:1;flex:none;}
+  .faq[open] summary::after{content:'\2013';}
+  .faq[open] summary{color:var(--tomato);}
+  .faq-a{padding:0 1.3rem 1.2rem;color:#5c5044;}
+  .faq-a a{color:var(--tomato);font-weight:700;text-decoration:none;}
+
   /* ---------- Footer ---------- */
   footer{background:var(--charcoal);color:#f6ede2;padding:3rem 1.2rem 2rem;}
   .foot-grid{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;}
@@ -279,6 +294,7 @@
     <nav class="links" id="navlinks">
       <a href="#menu">Menu</a>
       <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
       <a href="#visit">Visit Us</a>
       <a class="order" href="https://order.toasttab.com/online/maxis-pizza-ice-cream-9160-warren-h-abernathy" target="_blank" rel="noopener">Order Online 🛒</a>
     </nav>
@@ -498,34 +514,6 @@
     <div class="review-cta">
       <a class="btn btn-pink" href="https://www.facebook.com/profile.php?id=61590612227667&sk=reviews" target="_blank" rel="noopener">👍 Review us on Facebook</a>
     </div>
-
-    <!-- ===== Facebook follow / photo feed (now part of the reviews section) ===== -->
-    <h3 class="fb-follow-title">📸 Follow Us on Facebook</h3>
-    <p class="fb-follow-sub">Our latest photos &amp; posts — updates automatically every time we share something new.</p>
-    <div class="fb-wrap">
-      <div class="fb-frame">
-        <!-- Facebook Page Plugin: auto-updates with the page's newest posts & photos -->
-        <div class="fb-page"
-             data-href="https://www.facebook.com/profile.php?id=61590612227667"
-             data-tabs="timeline"
-             data-width="500"
-             data-height="700"
-             data-small-header="false"
-             data-adapt-container-width="true"
-             data-hide-cover="false"
-             data-show-facepile="true">
-          <blockquote cite="https://www.facebook.com/profile.php?id=61590612227667" class="fb-xfbml-parse-ignore">
-            <div class="fb-fallback">
-              <p>📸 Loading our latest photos…</p>
-              <a class="btn btn-primary" href="https://www.facebook.com/profile.php?id=61590612227667" target="_blank" rel="noopener">Visit us on Facebook</a>
-            </div>
-          </blockquote>
-        </div>
-      </div>
-    </div>
-    <p style="text-align:center;margin-top:1.5rem;">
-      <a class="btn btn-ghost" href="https://www.facebook.com/profile.php?id=61590612227667" target="_blank" rel="noopener">See all photos on Facebook →</a>
-    </p>
   </div>
 </section>
 
@@ -567,6 +555,64 @@
   </div>
 </section>
 
+<!-- ============ FAQ ============ -->
+<section id="faq" style="background:linear-gradient(180deg,var(--cream-2),var(--cream));">
+  <div class="wrap" style="max-width:820px;">
+    <div class="sec-head">
+      <div class="eyebrow">good to know</div>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+
+      <details class="faq">
+        <summary>Do you offer gluten-free options?</summary>
+        <div class="faq-a">We know dietary needs matter! Give us a call at <a href="tel:+18643081226">(864) 308-1226</a> and we'll be glad to go over our current gluten-free options with you.</div>
+      </details>
+
+      <details class="faq">
+        <summary>Do you have vegetarian options?</summary>
+        <div class="faq-a">You bet! Try our <strong>Harvest</strong> veggie pizza, a <strong>Build Your Own</strong> loaded with your favorite veggies, or a fresh <strong>House Salad</strong>.</div>
+      </details>
+
+      <details class="faq">
+        <summary>Can I order online for pickup or delivery?</summary>
+        <div class="faq-a">Absolutely. Tap any <a href="https://order.toasttab.com/online/maxis-pizza-ice-cream-9160-warren-h-abernathy" target="_blank" rel="noopener">Order Online</a> button to order through Toast for pickup or delivery — it goes straight to our kitchen.</div>
+      </details>
+
+      <details class="faq">
+        <summary>What sizes do your pizzas come in?</summary>
+        <div class="faq-a">Two sizes: a <strong>10-inch</strong> (perfect personal size) and a shareable <strong>16-inch</strong>. Pick one of our specialty pies or Build Your Own in either size.</div>
+      </details>
+
+      <details class="faq">
+        <summary>Do you serve ice cream too, or just pizza?</summary>
+        <div class="faq-a">We sure do — that's the best part! Hand-scooped cones and cups, brownie &amp; baklava sundaes, milkshakes, banana splits and more. Save room. 🍨</div>
+      </details>
+
+      <details class="faq">
+        <summary>What are your hours?</summary>
+        <div class="faq-a">Monday–Thursday 11am–9pm, Friday–Saturday 11am–10pm, and Sunday 4pm–9pm.</div>
+      </details>
+
+      <details class="faq">
+        <summary>Where are you located?</summary>
+        <div class="faq-a">9160 Warren H Abernathy Hwy, Spartanburg, SC 29301. Check the map in the <a href="#visit">Visit Us</a> section for directions.</div>
+      </details>
+
+      <details class="faq">
+        <summary>Do you accept credit and debit cards?</summary>
+        <div class="faq-a">Yes, we accept major cards. A small 3% processing fee is added to card payments to help cover the cost.</div>
+      </details>
+
+      <details class="faq">
+        <summary>Do you cater parties or large orders?</summary>
+        <div class="faq-a">Feeding a crowd? Give us a call at <a href="tel:+18643081226">(864) 308-1226</a> and we'll help you plan the perfect order.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="foot-grid">
@@ -590,8 +636,8 @@
     <div>
       <h4>Quick Links</h4>
       <p><a href="#menu">Menu</a></p>
-      <p><a href="#photos">Photos</a></p>
       <p><a href="#reviews">Reviews</a></p>
+      <p><a href="#faq">FAQ</a></p>
       <p><a href="https://order.toasttab.com/online/maxis-pizza-ice-cream-9160-warren-h-abernathy" target="_blank" rel="noopener">Order Online ↗</a></p>
     </div>
   </div>
@@ -602,11 +648,6 @@
 
 <!-- Floating mobile order button -->
 <a class="btn btn-primary float-order" href="https://order.toasttab.com/online/maxis-pizza-ice-cream-9160-warren-h-abernathy" target="_blank" rel="noopener">🛒 Order Online</a>
-
-<!-- Facebook SDK for the live Page Plugin -->
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous"
-  src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0"></script>
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
