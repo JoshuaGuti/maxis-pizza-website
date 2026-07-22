@@ -200,6 +200,20 @@
   .price-grid span b{color:var(--tomato);}
   .menu-cta{text-align:center;margin-top:1rem;}
 
+  /* ---------- Build Your Own steps ---------- */
+  .byo-step{position:relative;padding-left:3.6rem;margin-bottom:1.8rem;}
+  .byo-step:last-child{margin-bottom:0;}
+  .byo-step .step-num{
+    position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;
+    background:var(--tomato);color:#fff;font-family:'Oswald',sans-serif;font-weight:700;
+    font-size:1.3rem;display:grid;place-items:center;z-index:1;box-shadow:0 3px 8px rgba(226,59,46,.35);
+  }
+  .byo-step::before{content:'';position:absolute;left:19px;top:44px;bottom:-1.8rem;width:2px;background:rgba(226,59,46,.28);}
+  .byo-step:last-child::before{display:none;}
+  .byo-step .step-title{font-family:'Oswald',sans-serif;font-weight:700;font-size:1.2rem;color:var(--charcoal);text-transform:uppercase;letter-spacing:.02em;margin:.55rem 0 .9rem;}
+  .byo-toppings{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.5rem;}
+  .byo-toppings .item .price{white-space:normal;font-size:.92rem;}
+
   /* ---------- Photos / Facebook ---------- */
   #photos{background:linear-gradient(180deg,var(--cream-2),var(--cream));}
   .fb-wrap{display:flex;justify-content:center;}
@@ -363,20 +377,31 @@
     <!-- Build Your Own -->
     <div class="menu-block" id="m-byo">
       <h3><img class="thumb" src="food-pizza.webp" alt="" />Build Your Own Pizza</h3>
-      <p class="note">Start with our house dough &amp; Maxi's sauce, then pile on your favorites.</p>
-      <div class="items">
-        <div class="item"><div class="row"><span class="name">10 Inch Build Your Own</span><span class="price">$10.00</span></div><div class="desc">Personal size, 6-cut — pick your toppings.</div></div>
-        <div class="item"><div class="row"><span class="name">16 Inch Build Your Own</span><span class="price">$16.00</span></div><div class="desc">Large, 10-cut — great for sharing.</div></div>
+      <p class="note">Start with our house dough &amp; Maxi's sauce — then build your pie in two easy steps.</p>
+
+      <div class="byo-step">
+        <span class="step-num">1</span>
+        <div class="step-title">Pick your size</div>
+        <div class="items">
+          <div class="item"><div class="row"><span class="name">10 Inch Build Your Own</span><span class="price">$10.00</span></div><div class="desc">Personal size, 6-cut.</div></div>
+          <div class="item"><div class="row"><span class="name">16 Inch Build Your Own</span><span class="price">$16.00</span></div><div class="desc">Large, 10-cut — great for sharing.</div></div>
+        </div>
       </div>
 
-      <div class="items" style="margin-top:1rem;">
-        <div class="item">
-          <div class="row"><span class="name">Meats &amp; Cheeses <span style="font-weight:400;color:#8a7c6d;font-size:.85rem;">· per topping</span></span><span class="price">+$1.75 (10") · +$2.99 (16")</span></div>
-          <div class="desc">Pepperoni · Sausage · Bacon · Ham · Chicken · Ground Beef · Anchovies · Cup N' Char Pepperoni · Ricotta or Mozzarella Cheese</div>
-        </div>
-        <div class="item">
-          <div class="row"><span class="name">Veggies <span style="font-weight:400;color:#8a7c6d;font-size:.85rem;">· per topping</span></span><span class="price">+$1.50 (10") · +$2.75 (16")</span></div>
-          <div class="desc">Tomatoes · Green Peppers · Onions · Spinach · Mushrooms · Banana Peppers · Olives · Jalapeños · Pineapple · Lettuce</div>
+      <div class="byo-step">
+        <span class="step-num">2</span>
+        <div class="step-title">Pick your cheese, meats &amp; veggies</div>
+        <div class="byo-toppings">
+          <div class="item">
+            <div class="row"><span class="name">Cheese &amp; Meats</span></div>
+            <div class="price">+$1.75 per topping (10") · +$2.99 (16")</div>
+            <div class="desc">Mozzarella · Ricotta · Pepperoni · Sausage · Bacon · Ham · Chicken · Ground Beef · Anchovies · Cup N' Char Pepperoni</div>
+          </div>
+          <div class="item">
+            <div class="row"><span class="name">Veggies</span></div>
+            <div class="price">+$1.50 per topping (10") · +$2.75 (16")</div>
+            <div class="desc">Tomatoes · Green Peppers · Onions · Spinach · Mushrooms · Banana Peppers · Olives · Jalapeños · Pineapple · Lettuce</div>
+          </div>
         </div>
       </div>
     </div>
