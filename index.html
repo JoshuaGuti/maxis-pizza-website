@@ -261,7 +261,13 @@
   .sec-mascot{ height:78px;width:auto;flex:none;margin-left:auto;align-self:flex-start;transform-origin:bottom center; }
   .wing-mascot{ animation:flap .55s ease-in-out infinite; }
   .wave-mascot{ animation:wave 1.4s ease-in-out infinite; }
-  @media(max-width:560px){ .sec-mascot{height:56px;} .mascot{width:130px;} }
+  /* layered true-limb rig */
+  .rig{ position:relative;display:inline-block;flex:none;margin-left:auto;align-self:flex-start;height:78px; }
+  .rig .rig-base{ display:block;height:100%;width:auto; }
+  .rig .rig-limb{ position:absolute;top:0;left:0;height:100%;width:auto; }
+  .wave-hand{ transform-origin:48% 34%;animation:handwave .9s ease-in-out infinite; }
+  @keyframes handwave{ 0%,100%{transform:rotate(5deg);} 50%{transform:rotate(-17deg);} }
+  @media(max-width:560px){ .sec-mascot,.rig{height:56px;} .mascot{width:130px;} }
 
   @keyframes walkStep{
     0%,100%{ transform:translateY(0) rotate(-3deg); }
@@ -281,7 +287,7 @@
     80%    { transform:rotate(-2deg); }
   }
 
-  @media(prefers-reduced-motion:reduce){ .live-dot,.mascot,.wing-mascot,.wave-mascot{animation:none;} }
+  @media(prefers-reduced-motion:reduce){ .live-dot,.mascot,.wing-mascot,.wave-mascot,.wave-hand{animation:none;} }
 
   /* ---------- #3 live pie builder ---------- */
   .pie-builder{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:1.5rem 1.5rem 1.7rem;}
@@ -614,7 +620,7 @@
 
     <!-- Handhelds -->
     <div class="menu-block" id="m-hand">
-      <h3><img class="thumb" src="food-sub.webp" alt="" />Handhelds &amp; Subs<img class="sec-mascot wave-mascot" src="handheld-mascot.png" alt="Cartoon sub sandwich mascot" /></h3>
+      <h3><img class="thumb" src="food-sub.webp" alt="" />Handhelds &amp; Subs<span class="rig" role="img" aria-label="Cartoon sub sandwich mascot waving"><img class="rig-base" src="handheld-base.png" alt="" /><img class="rig-limb wave-hand" src="handheld-arm.png" alt="" /></span></h3>
       <div class="items">
         <div class="item"><div class="row"><span class="name">The Godfather</span><span class="price">$12.00</span></div><div class="desc">Salami, ham, turkey, pepperoni, mozzarella, banana peppers, onions, tomato, arugula, Italian dressing.</div></div>
         <div class="item"><div class="row"><span class="name">Clucking Good</span><span class="price">$12.00</span></div><div class="desc">Black Forest turkey, bacon, mozzarella, lettuce, tomato, mayo.</div></div>
