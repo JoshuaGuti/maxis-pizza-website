@@ -255,39 +255,12 @@
   .mural-copy p{color:#f4e6d2;font-size:1.08rem;max-width:40ch;margin:0 0 1.5rem;}
   @media(max-width:760px){ .mural-inner{grid-template-columns:1fr;gap:1.6rem;} .mural-photo{max-height:440px;} }
 
-  /* ---------- character mascots ---------- */
-  .mascot{ width:160px;height:auto;flex:none;filter:drop-shadow(0 6px 14px rgba(0,0,0,.45));
-    transform-origin:bottom center;animation:walkStep .7s ease-in-out infinite; }
-  .sec-mascot{ height:78px;width:auto;flex:none;margin-left:auto;align-self:flex-start;transform-origin:bottom center; }
-  .wing-mascot{ animation:flap .55s ease-in-out infinite; }
-  .wave-mascot{ animation:wave 1.4s ease-in-out infinite; }
-  /* layered true-limb rig */
-  .rig{ position:relative;display:inline-block;flex:none;margin-left:auto;align-self:flex-start;height:78px; }
-  .rig .rig-base{ display:block;height:100%;width:auto; }
-  .rig .rig-limb{ position:absolute;top:0;left:0;height:100%;width:auto; }
-  .wave-hand{ transform-origin:48% 34%;animation:handwave .9s ease-in-out infinite; }
-  @keyframes handwave{ 0%,100%{transform:rotate(5deg);} 50%{transform:rotate(-17deg);} }
-  @media(max-width:560px){ .sec-mascot,.rig{height:56px;} .mascot{width:130px;} }
+  /* ---------- character mascots (static) ---------- */
+  .mascot{ width:160px;height:auto;flex:none;filter:drop-shadow(0 6px 14px rgba(0,0,0,.45)); }
+  .sec-mascot{ height:78px;width:auto;flex:none;margin-left:auto;align-self:flex-start; }
+  @media(max-width:560px){ .sec-mascot{height:56px;} .mascot{width:130px;} }
 
-  @keyframes walkStep{
-    0%,100%{ transform:translateY(0) rotate(-3deg); }
-    25%    { transform:translateY(-7px) rotate(0deg); }
-    50%    { transform:translateY(0) rotate(3deg); }
-    75%    { transform:translateY(-7px) rotate(0deg); }
-  }
-  @keyframes flap{
-    0%,100%{ transform:translateY(0) scaleX(1); }
-    50%    { transform:translateY(-6px) scaleX(.88); }
-  }
-  @keyframes wave{
-    0%,100%{ transform:rotate(0deg); }
-    20%    { transform:rotate(-9deg); }
-    40%    { transform:rotate(-2deg); }
-    60%    { transform:rotate(-9deg); }
-    80%    { transform:rotate(-2deg); }
-  }
-
-  @media(prefers-reduced-motion:reduce){ .live-dot,.mascot,.wing-mascot,.wave-mascot,.wave-hand{animation:none;} }
+  @media(prefers-reduced-motion:reduce){ .live-dot{animation:none;} }
 
   /* ---------- #3 live pie builder ---------- */
   .pie-builder{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:1.5rem 1.5rem 1.7rem;}
@@ -601,7 +574,7 @@
 
     <!-- Wings -->
     <div class="menu-block" id="m-wings">
-      <h3><img class="thumb" src="food-wings.webp" alt="" />Chicken Wings<img class="sec-mascot wing-mascot" src="just-wing-it.png" alt="Just wing it — cartoon chicken mascot" /></h3>
+      <h3><img class="thumb" src="food-wings.webp" alt="" />Chicken Wings<img class="sec-mascot" src="just-wing-it.png" alt="Just wing it — cartoon chicken mascot" /></h3>
       <div class="items">
         <div class="item"><div class="row"><span class="name">12 Count Wings</span><span class="price">$17.99</span></div><div class="desc">One sauce.</div></div>
         <div class="item"><div class="row"><span class="name">18 Count Wings</span><span class="price">$23.49</span></div><div class="desc">Two sauces (split 9 &amp; 9).</div></div>
@@ -620,7 +593,7 @@
 
     <!-- Handhelds -->
     <div class="menu-block" id="m-hand">
-      <h3><img class="thumb" src="food-sub.webp" alt="" />Handhelds &amp; Subs<span class="rig" role="img" aria-label="Cartoon sub sandwich mascot waving"><img class="rig-base" src="handheld-base.png" alt="" /><img class="rig-limb wave-hand" src="handheld-arm.png" alt="" /></span></h3>
+      <h3><img class="thumb" src="food-sub.webp" alt="" />Handhelds &amp; Subs<img class="sec-mascot" src="handheld-mascot.png" alt="Cartoon sub sandwich mascot" /></h3>
       <div class="items">
         <div class="item"><div class="row"><span class="name">The Godfather</span><span class="price">$12.00</span></div><div class="desc">Salami, ham, turkey, pepperoni, mozzarella, banana peppers, onions, tomato, arugula, Italian dressing.</div></div>
         <div class="item"><div class="row"><span class="name">Clucking Good</span><span class="price">$12.00</span></div><div class="desc">Black Forest turkey, bacon, mozzarella, lettuce, tomato, mayo.</div></div>
