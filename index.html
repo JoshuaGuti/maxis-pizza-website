@@ -214,6 +214,74 @@
   .byo-toppings{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.5rem;}
   .byo-toppings .item .price{white-space:normal;font-size:.92rem;}
 
+  /* ---------- #2 quiet secondary action ---------- */
+  .text-link{
+    align-self:center;font-family:'Oswald',sans-serif;font-weight:700;font-size:1rem;
+    color:var(--charcoal);text-decoration:none;border-bottom:2px solid rgba(31,31,29,.25);
+    padding-bottom:2px;transition:color .15s,border-color .15s;
+  }
+  .text-link:hover{color:var(--tomato);border-color:var(--tomato);}
+
+  /* ---------- #9 micro-interactions ---------- */
+  .item{transition:transform .18s ease, box-shadow .18s ease;}
+  .item:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(43,33,24,.16);}
+  .menu-nav a{transition:transform .15s ease, box-shadow .15s ease, background .15s, color .15s;}
+  .menu-nav a:hover{transform:translateY(-2px);}
+  .faq{transition:box-shadow .18s ease, transform .18s ease;}
+  .faq:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(43,33,24,.12);}
+  .live-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:.15rem;vertical-align:middle;}
+  .live-dot.ok{background:#37c46b;animation:pulseOk 1.9s infinite;}
+  .live-dot.closed{background:#e0554e;animation:pulseClosed 2.6s infinite;}
+  @keyframes pulseOk{0%{box-shadow:0 0 0 0 rgba(55,196,107,.6)}70%{box-shadow:0 0 0 10px rgba(55,196,107,0)}100%{box-shadow:0 0 0 0 rgba(55,196,107,0)}}
+  @keyframes pulseClosed{0%{box-shadow:0 0 0 0 rgba(224,85,78,.5)}70%{box-shadow:0 0 0 9px rgba(224,85,78,0)}100%{box-shadow:0 0 0 0 rgba(224,85,78,0)}}
+
+  /* ---------- #6 checkerboard strip + hand-painted mural band ---------- */
+  .checker{height:22px;background-image:repeating-conic-gradient(var(--tomato) 0% 25%, var(--cream) 0% 50%);background-size:22px 22px;}
+  .mural{background:linear-gradient(158deg,#7a4a24 0%, #5c3717 100%);position:relative;overflow:hidden;}
+  .mural-inner{max-width:var(--maxw);margin:0 auto;padding:3.2rem 1.2rem;display:grid;grid-template-columns:.82fr 1.18fr;gap:2.6rem;align-items:center;}
+  .mural-photo{border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 44px rgba(0,0,0,.45);border:5px solid #fff;max-height:600px;}
+  .mural-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .mural-copy .eyebrow-cream{font-family:'Pacifico',cursive;color:#ffd9a0;font-size:1.15rem;margin-bottom:.4rem;}
+  .script-tag{margin:.2rem 0 1rem;line-height:1.02;}
+  .script-tag span{display:inline-block;font-family:'Pacifico',cursive;font-size:clamp(2.2rem,5.4vw,3.6rem);text-shadow:2px 3px 0 rgba(0,0,0,.22);}
+  .script-tag .s1{color:#ff5b47;}
+  .script-tag .s2{color:#7fd0e0;}
+  .script-tag .s3{color:#ffd9a0;}
+  .mural-copy p{color:#f4e6d2;font-size:1.08rem;max-width:40ch;margin:0 0 1.5rem;}
+  @media(max-width:760px){ .mural-inner{grid-template-columns:1fr;gap:1.6rem;} .mural-photo{max-height:440px;} }
+
+  /* ---------- #4 mascot ---------- */
+  .mascot{width:118px;height:auto;filter:drop-shadow(0 8px 10px rgba(0,0,0,.3));animation:bob 2.4s ease-in-out infinite;}
+  .mascot-inline{width:96px;vertical-align:middle;}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-11px) rotate(3deg)}}
+  @media(prefers-reduced-motion:reduce){ .mascot{animation:none;} .live-dot{animation:none;} }
+
+  /* ---------- #3 live pie builder ---------- */
+  .pie-builder{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:1.5rem 1.5rem 1.7rem;}
+  .pb-sizes{display:flex;gap:.8rem;flex-wrap:wrap;}
+  .pb-size{
+    flex:1 1 170px;border:2px solid var(--cream-2);border-radius:14px;padding:.9rem 1.1rem;cursor:pointer;
+    background:#fff;transition:.15s;display:flex;justify-content:space-between;align-items:center;gap:.5rem;font-family:'Oswald',sans-serif;
+  }
+  .pb-size:hover{border-color:var(--tomato);transform:translateY(-2px);}
+  .pb-size.active{border-color:var(--tomato);background:#fff5f0;box-shadow:0 5px 0 rgba(192,50,46,.16);}
+  .pb-size .pb-size-name{font-weight:700;color:var(--charcoal);font-size:1.15rem;}
+  .pb-size .pb-size-price{color:var(--tomato);font-weight:700;font-size:1.15rem;}
+  .pb-group{margin-top:1.1rem;}
+  .pb-group h5{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.03em;color:var(--charcoal);margin:0 0 .55rem;font-size:.95rem;}
+  .pb-group h5 .pb-per{color:var(--tomato);font-weight:600;}
+  .pb-chips{display:flex;flex-wrap:wrap;gap:.45rem;}
+  .chip{
+    border:2px solid var(--cream-2);background:#fff;border-radius:999px;padding:.4rem .85rem;font-size:.9rem;
+    font-weight:700;color:var(--ink);cursor:pointer;transition:.13s;font-family:'Nunito Sans',sans-serif;
+  }
+  .chip:hover{border-color:var(--tomato);color:var(--tomato);}
+  .chip.active{background:var(--tomato);border-color:var(--tomato);color:#fff;}
+  .chip.active::before{content:'✓ ';}
+  .pb-total{margin-top:1.4rem;padding-top:1.1rem;border-top:2px dashed var(--cream-2);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem;}
+  .pb-total .amt{font-family:'Oswald',sans-serif;font-weight:700;font-size:2rem;color:var(--tomato);line-height:1;}
+  .pb-total .lbl{color:#6b5d4f;font-size:.9rem;}
+
   /* ---------- Photos / Facebook ---------- */
   #photos{background:linear-gradient(180deg,var(--cream-2),var(--cream));}
   .fb-wrap{display:flex;justify-content:center;}
@@ -333,7 +401,7 @@
       <p class="lead">Hand-built specialty pizzas, saucy wings, loaded subs, and scoops of homemade ice cream — made fresh, the old fashioned way.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="https://order.toasttab.com/online/maxis-pizza-ice-cream-9160-warren-h-abernathy" target="_blank" rel="noopener">🛒 Order Online</a>
-        <a class="btn btn-ghost" href="#menu">View the Menu</a>
+        <a class="text-link" href="#menu">or browse the menu ↓</a>
       </div>
     </div>
     <div class="hero-logo">
@@ -352,6 +420,26 @@
     <a href="#visit" id="open-status">🕒 See our hours</a>
   </div>
 </div>
+
+<!-- ============ MURAL / WE'RE OPEN BAND ============ -->
+<div class="checker"></div>
+<div class="mural">
+  <div class="mural-inner">
+    <div class="mural-photo">
+      <img src="maxi-outside-paint.jpg" alt="Maxi's Pizza &amp; Ice Cream hand-painted mural — Slice it, Scoop it, Love it. We are open!" loading="lazy" />
+    </div>
+    <div class="mural-copy">
+      <div class="eyebrow-cream">come on by</div>
+      <div class="script-tag"><span class="s1">Slice it,</span> <span class="s2">Scoop it,</span> <span class="s3">Love it.</span></div>
+      <p>Hand-painted, hand-tossed, and made fresh right here in Spartanburg. Swing by the shop or order online — either way, you're in for something good.</p>
+      <div style="display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;">
+        <a class="btn btn-primary" href="https://order.toasttab.com/online/maxis-pizza-ice-cream-9160-warren-h-abernathy" target="_blank" rel="noopener">🛒 Order Online</a>
+        <img class="mascot" src="mascot.png" alt="Maxi's running pizza mascot" />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="checker"></div>
 
 <!-- ============ MENU ============ -->
 <section id="menu">
@@ -377,32 +465,63 @@
     <!-- Build Your Own -->
     <div class="menu-block" id="m-byo">
       <h3><img class="thumb" src="food-pizza.webp" alt="" />Build Your Own Pizza</h3>
-      <p class="note">Start with our house dough &amp; Maxi's sauce — then build your pie in two easy steps.</p>
+      <p class="note">Start with our house dough &amp; Maxi's sauce, then tap to add toppings — your total updates as you go.</p>
 
-      <div class="byo-step">
-        <span class="step-num">1</span>
-        <div class="step-title">Pick your size</div>
-        <div class="items">
-          <div class="item"><div class="row"><span class="name">10 Inch Build Your Own</span><span class="price">$10.00</span></div><div class="desc">Personal size, 6-cut.</div></div>
-          <div class="item"><div class="row"><span class="name">16 Inch Build Your Own</span><span class="price">$16.00</span></div><div class="desc">Large, 10-cut — great for sharing.</div></div>
+      <div class="pie-builder" id="pieBuilder">
+        <div class="byo-step">
+          <span class="step-num">1</span>
+          <div class="step-title">Pick your size</div>
+          <div class="pb-sizes">
+            <button type="button" class="pb-size active" data-base="10" data-meat="1.75" data-veg="1.50" data-label='10&Prime;'>
+              <span class="pb-size-name">10&Prime; <small style="font-weight:400;color:#8a7c6d;">· 6-cut</small></span><span class="pb-size-price">$10.00</span>
+            </button>
+            <button type="button" class="pb-size" data-base="16" data-meat="2.99" data-veg="2.75" data-label='16&Prime;'>
+              <span class="pb-size-name">16&Prime; <small style="font-weight:400;color:#8a7c6d;">· 10-cut</small></span><span class="pb-size-price">$16.00</span>
+            </button>
+          </div>
         </div>
-      </div>
 
-      <div class="byo-step">
-        <span class="step-num">2</span>
-        <div class="step-title">Pick your cheese, meats &amp; veggies</div>
-        <div class="byo-toppings">
-          <div class="item">
-            <div class="row"><span class="name">Cheese &amp; Meats</span></div>
-            <div class="price">+$1.75 per topping (10") · +$2.99 (16")</div>
-            <div class="desc"><strong style="color:var(--charcoal);">Cheese:</strong> Mozzarella or Ricotta</div>
-            <div class="desc"><strong style="color:var(--charcoal);">Meats:</strong> Pepperoni · Sausage · Bacon · Ham · Chicken · Ground Beef · Anchovies · Cup N' Char Pepperoni</div>
+        <div class="byo-step">
+          <span class="step-num">2</span>
+          <div class="step-title">Pick your toppings</div>
+          <div class="pb-group">
+            <h5>Cheese &amp; Meats <span class="pb-per">+$<span data-meat-price>1.75</span> each</span></h5>
+            <div class="pb-chips" data-cat="meat">
+              <button type="button" class="chip">Mozzarella</button>
+              <button type="button" class="chip">Ricotta</button>
+              <button type="button" class="chip">Pepperoni</button>
+              <button type="button" class="chip">Sausage</button>
+              <button type="button" class="chip">Bacon</button>
+              <button type="button" class="chip">Ham</button>
+              <button type="button" class="chip">Chicken</button>
+              <button type="button" class="chip">Ground Beef</button>
+              <button type="button" class="chip">Anchovies</button>
+              <button type="button" class="chip">Cup N' Char Pepperoni</button>
+            </div>
           </div>
-          <div class="item">
-            <div class="row"><span class="name">Veggies</span></div>
-            <div class="price">+$1.50 per topping (10") · +$2.75 (16")</div>
-            <div class="desc">Tomatoes · Green Peppers · Onions · Spinach · Mushrooms · Banana Peppers · Olives · Jalapeños · Pineapple · Lettuce</div>
+          <div class="pb-group">
+            <h5>Veggies <span class="pb-per">+$<span data-veg-price>1.50</span> each</span></h5>
+            <div class="pb-chips" data-cat="veg">
+              <button type="button" class="chip">Tomatoes</button>
+              <button type="button" class="chip">Green Peppers</button>
+              <button type="button" class="chip">Onions</button>
+              <button type="button" class="chip">Spinach</button>
+              <button type="button" class="chip">Mushrooms</button>
+              <button type="button" class="chip">Banana Peppers</button>
+              <button type="button" class="chip">Olives</button>
+              <button type="button" class="chip">Jalapeños</button>
+              <button type="button" class="chip">Pineapple</button>
+              <button type="button" class="chip">Lettuce</button>
+            </div>
           </div>
+        </div>
+
+        <div class="pb-total">
+          <div><span class="lbl">Your pie</span><br><span class="lbl" id="pbSummary">10&Prime; · no toppings yet</span></div>
+          <div class="amt" id="pbAmount">$10.00</div>
+        </div>
+        <div class="menu-cta" style="margin-top:1.1rem;text-align:left;">
+          <a class="btn btn-primary" href="https://order.toasttab.com/online/maxis-pizza-ice-cream-9160-warren-h-abernathy" target="_blank" rel="noopener">🛒 Order Your Pie</a>
         </div>
       </div>
     </div>
@@ -704,7 +823,9 @@
         });
         var cur = hh*60 + mm, h = hours[wd];
         var open = h && cur >= h[0]*60 && cur < h[1]*60;
-        el.innerHTML = open ? '🟢 Open now &middot; see hours' : '🔴 Closed now &middot; see hours';
+        el.innerHTML = open
+          ? '<span class="live-dot ok"></span> Open now &middot; see hours'
+          : '<span class="live-dot closed"></span> Closed now &middot; see hours';
       }catch(e){ el.innerHTML = '🕒 See our hours'; }
     }
     render();
@@ -714,6 +835,46 @@
   document.querySelectorAll('#navlinks a').forEach(function(a){
     a.addEventListener('click', function(){ document.getElementById('navlinks').classList.remove('open'); });
   });
+
+  // Live "Build Your Own" pie price calculator
+  (function(){
+    var pb = document.getElementById('pieBuilder');
+    if(!pb) return;
+    var sizes = pb.querySelectorAll('.pb-size');
+    var chips = pb.querySelectorAll('.chip');
+    var amountEl = document.getElementById('pbAmount');
+    var summaryEl = document.getElementById('pbSummary');
+    var base = 10, meat = 1.75, veg = 1.50, label = '10″';
+    function recalc(){
+      var m = 0, v = 0;
+      chips.forEach(function(c){
+        if(c.classList.contains('active')){
+          if(c.parentNode.getAttribute('data-cat') === 'meat') m++; else v++;
+        }
+      });
+      var total = base + m*meat + v*veg;
+      amountEl.textContent = '$' + total.toFixed(2);
+      var t = m + v;
+      summaryEl.textContent = label + ' · ' + (t ? (t + ' topping' + (t>1?'s':'')) : 'no toppings yet');
+      pb.querySelectorAll('[data-meat-price]').forEach(function(e){ e.textContent = meat.toFixed(2); });
+      pb.querySelectorAll('[data-veg-price]').forEach(function(e){ e.textContent = veg.toFixed(2); });
+    }
+    sizes.forEach(function(s){
+      s.addEventListener('click', function(){
+        sizes.forEach(function(x){ x.classList.remove('active'); });
+        s.classList.add('active');
+        base = parseFloat(s.getAttribute('data-base'));
+        meat = parseFloat(s.getAttribute('data-meat'));
+        veg  = parseFloat(s.getAttribute('data-veg'));
+        label = s.getAttribute('data-label');
+        recalc();
+      });
+    });
+    chips.forEach(function(c){
+      c.addEventListener('click', function(){ c.classList.toggle('active'); recalc(); });
+    });
+    recalc();
+  })();
 </script>
 </body>
 </html>
